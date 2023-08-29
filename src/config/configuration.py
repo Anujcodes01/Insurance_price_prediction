@@ -36,3 +36,7 @@ TRANSFORM_TEST_FILE_PATH = os.path.join(ROOT_DIR,ARTIFACT_DIR_KEY,DATA_TRANSFORM
 #                                           DATA_TRANSFORMATION_ARTIFACT
 #                                           ,DATA_PREPROCESSED_DIR,DATA_TRANSFORMATION_FEATURES_ENN)
 
+
+# Model training
+MODEL_FILE_PATH = os.path.join(ROOT_DIR,ARTIFACT_DIR_KEY,
+                               MODEL_TRAINER_KEY,MODEL_OBJECT)
