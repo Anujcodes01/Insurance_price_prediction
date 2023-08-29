@@ -1,1 +1,7 @@
+# data ingestion
+
 constant file --> configuration file -> data ingestion 
+
+# data transformation
+
+constant file --> configuration file -> data transformation -> utils file -> data transformation -> data transformation
