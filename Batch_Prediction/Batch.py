@@ -10,14 +10,6 @@ from src.utils import load_model
 from sklearn.pipeline import Pipeline
 
 
-PREDICTION_FOLDER = 'Batch_prediction'
-PREDICTION_CSV = 'Prediction_csv'
-PREDICTION_FILE = "output.csv"
-TRANFORM_DATA = 'Processed_transformation'
-ROOT_DIR = os.getcwd()
-TRANFORM_PROCESSED = os.path.join(ROOT_DIR,PREDICTION_FOLDER,TRANFORM_DATA)
-BATCH_PREDICTION = os.path.join(ROOT_DIR,PREDICTION_FOLDER,PREDICTION_CSV)
-
 class BatchPrediction(object):
     def __init__(self,input_file,
                  model_file_path,
@@ -49,10 +41,11 @@ class BatchPrediction(object):
             
             df_prediction = pd.DataFrame(prediction,columns=['prediction'])
             
-            BATCH_PREDICTION_PATH = BATCH_PREDICTION
-            os.makedirs(BATCH_PREDICTION_PATH,exist_ok=True)
-            csv_path = os.path.join(BATCH_PREDICTION_PATH,PREDICTION_CSV)
-            df_prediction.to_csv(index=False)
+              # Save the predictions to a CSV file
+            batch_prediction_path = os.path.join(BATCH_PREDICTION)
+            os.makedirs(os.path.dirname(batch_prediction_path), exist_ok=True)
+            df_prediction.to_csv(batch_prediction_path, index=False)
+            logging.info(f"Batch predictions saved to '{batch_prediction_path}'.")
             
             
             logging.info("Batch Prediction successfully completed")
