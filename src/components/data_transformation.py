@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
-from src.utils import save_object
+from src.utils import save_obj
 
 
 # data transformation class
@@ -110,7 +110,7 @@ class DataTransformation:
             df_test.to_csv(self.data_transformation_config.transfrom_test_file_path,index=False,header=True)
             
             
-            save_object(filepath=self.data_transformation_config.processed_obj_file_path,obj=processing_obj)
+            save_obj(filepath=self.data_transformation_config.processed_obj_file_path,obj=processing_obj)
             logging.info("save the preprocessed object as a file")
             
             return (train_arr

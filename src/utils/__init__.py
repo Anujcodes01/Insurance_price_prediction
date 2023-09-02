@@ -1,17 +1,17 @@
-import pickle
+import joblib
 from src.logger import logging
 from src.exception import CustomException
 import os,sys
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 
-def save_object(filepath,obj):
+def save_obj(filepath,obj):
     try:
         dir_path = os.path.dirname(filepath)
         os.makedirs(dir_path,exist_ok=True)
         
         with open(filepath,'wb') as file_obj:
-            pickle.dump(obj,file_obj)
+            joblib.dump(obj,file_obj)
         
     except Exception as e:
         CustomException(e,sys)
@@ -38,3 +38,13 @@ def evaluate_model(X_train, y_train,X_test, y_test, models):
         logging.info('Exception occured while evaluating model')
         raise CustomException(e,sys)   
     
+
+def load_model(file_path):
+    try:
+        with open(file_path,'rb') as f:
+            return joblib.load(f)
+    
+    except Exception as e:
+        
+        logging.info('Exception occured while loading model ')
+        CustomException(e,sys)

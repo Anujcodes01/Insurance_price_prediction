@@ -39,5 +39,6 @@ TRANFORM_TEST_DIR_KEY = "test.csv"
 
 # model training
 
-MODEL_TRAINER_KEY = "Model_Trainer"
-MODEL_OBJECT = "Model.pkl"
+# model training
+MODEL_TRAINER_KEY = 'model_trainer'
+MODEL_OBJECT = 'model.pkl'

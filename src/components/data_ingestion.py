@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from src.logger import logging
 from src.exception import CustomException
-from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformation,DataTransformationConfig
 from src.components.model_trainer import ModelTrainer
 @dataclass
 class DataIngestionconfig:
@@ -76,15 +76,16 @@ class DataIngestion:
 #     obj = DataIngestion()
 #     train_data,test_data = obj.initiate_data_ingestion()
 #     data_transformation = DataTransformation()
-#     train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)   
+#     train_arr,test_arr = data_transformation.inititate_data_transformation(train_data,test_data)   
 
 #Model Training
 
 
+#model trainer
 if __name__ == "__main__":
     obj = DataIngestion()
-    train_data,test_data = obj.initiate_data_ingestion()
+    train_data_path,test_data_path = obj.initiate_data_ingestion()
     data_transformation = DataTransformation()
-    train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)
+    train_arr, test_arr , processed_obj_file_path= data_transformation.inititate_data_transformation(train_data_path, test_data_path)
     model_trainer = ModelTrainer()
     print(model_trainer.inititate_model_training(train_arr,test_arr))

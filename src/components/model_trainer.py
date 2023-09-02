@@ -12,7 +12,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
-from src.utils import evaluate_model,save_object
+from src.utils import evaluate_model,save_obj
 
 @dataclass
 class ModelTrainerConfig :
@@ -20,7 +20,7 @@ class ModelTrainerConfig :
     
 class ModelTrainer:
     def __init__(self):
-        self.model_trainer_config = ModelTrainerConfig
+        self.model_trainer_config = ModelTrainerConfig()
         
     def inititate_model_training(self,train_arr,test_arr):
         try:
@@ -54,10 +54,12 @@ class ModelTrainer:
             print('\n====================================================================================\n')
             logging.info(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
 
-            save_object(
-                    file_path=self.model_trainer_config.trainer_model_file_path,
-                    obj=best_model
+            save_obj(
+                 filepath=self.model_trainer_config.trainer_model_file_path,
+                 obj=best_model
             )
+          
+            logging.info("save the model object as a file")
             
             
         except Exception as e:
