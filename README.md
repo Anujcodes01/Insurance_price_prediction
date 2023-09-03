@@ -68,8 +68,7 @@ Both CSS and HTML files are being created and are being integrated with the crea
 
 ## Project Link - 
 ```
-https://insurancepriceprediction-kxkgl7wjxrz7cuirl9glfu.streamlit.app/ 
-
+https://insurancepriceprediction-ojb63lv3wvacythbfgwkzr.streamlit.app/ 
 ```
 
 ## Vedio Url - 

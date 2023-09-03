@@ -25,12 +25,25 @@ ALLOWED_EXTENSIONS = {'csv'}
 
 # Streamlit sidebar
 st.sidebar.header("Navigation")
-selected_page = st.sidebar.radio("Select a Page", ["Home", "Predict",  "Train"])
+selected_page = st.sidebar.radio("Select a Page", ["Home", "Train","Predict"])
 
 if selected_page == "Home":
     st.header("Home Page")
     st.write("Welcome to Insurance Premium Prediction App!")
     st.write("Use the sidebar to navigate to different pages.")
+    
+elif selected_page == "Train":
+    st.header("Model Training")
+
+    if st.button("Train Model"):
+        try:
+            pipeline = Train()
+            pipeline.main()
+            st.success("Training complete")
+        except Exception as e:
+            logging.error(f"{e}")
+            st.error(f"Error during training: {str(e)}")
+            
 
 elif selected_page == "Predict":
     st.header("Single Data Point Prediction")
@@ -87,17 +100,7 @@ elif selected_page == "Predict":
 #         st.success(output)
 
       
-elif selected_page == "Train":
-    st.header("Model Training")
 
-    if st.button("Train Model"):
-        try:
-            pipeline = Train()
-            pipeline.main()
-            st.success("Training complete")
-        except Exception as e:
-            logging.error(f"{e}")
-            st.error(f"Error during training: {str(e)}")
 
 # Run the Streamlit app
 if __name__ == '__main__':
