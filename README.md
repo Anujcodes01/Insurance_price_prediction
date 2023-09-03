@@ -67,9 +67,7 @@ In our endeavor to create a robust and end-to-end data-driven solution, we have 
 Both CSS and HTML files are being created and are being integrated with the created machine learning model. All the required files are then integrated to the app.py(For localhost), Application.py(For Streamlit) file and tested locally
 
 ## Project Link - 
-```
-https://insurancepriceprediction-ojb63lv3wvacythbfgwkzr.streamlit.app/ 
-```
+[Insurance Premium Prediction](https://insurancepriceprediction-ovmhkogfqumse2kfdyhh6c.streamlit.app/)
 
 ## Vedio Url - 
 
