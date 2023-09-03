@@ -9,7 +9,7 @@ from src.components.data_ingestion import DataIngestion
 from flask import Flask, request,render_template,jsonify
 from src.pipeline.training_pipeline import Train
 from src.pipeline.prediction_pipeline import CustomData, PredictionPipeline
-from Batch_Prediction.Batch import BatchPrediction
+from batch.Batch import BatchPrediction
 from werkzeug.utils import secure_filename
 
 
@@ -35,12 +35,12 @@ def predict_datapoint():
 
     else:
         data = CustomData(
-            age = int(request.form.get('Age')),
-            sex=  (request.form.get('Sex')),
-            smoker=  request.form.get('Smoker'),
-            children = int(request.form.get('Children')),
-            bmi=  float(request.form.get('Bmi')),
-            region=  (request.form.get('region')),
+            age = int(request.form.get('age')),
+            sex=  request.form.get('sex'),
+            smoker=  request.form.get('smoker'),
+            children = int(request.form.get('children')),
+            bmi=  float(request.form.get('bmi')),
+            region=  request.form.get('region'),
            
             
         )

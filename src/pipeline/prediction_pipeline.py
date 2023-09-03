@@ -35,7 +35,7 @@ class CustomData :
                     smoker : str,
                     region:str,
                     age:int,
-                    bmi:int,
+                    bmi:float,
                     children:int
                     ):
         """"categorical_columns = ['sex','smoker','region']

@@ -1,4 +1,4 @@
-import joblib
+import pickle
 from src.logger import logging
 from src.exception import CustomException
 import os,sys
@@ -11,7 +11,7 @@ def save_obj(filepath,obj):
         os.makedirs(dir_path,exist_ok=True)
         
         with open(filepath,'wb') as file_obj:
-            joblib.dump(obj,file_obj)
+            pickle.dump(obj,file_obj)
         
     except Exception as e:
         CustomException(e,sys)
@@ -42,7 +42,7 @@ def evaluate_model(X_train, y_train,X_test, y_test, models):
 def load_model(file_path):
     try:
         with open(file_path,'rb') as f:
-            return joblib.load(f)
+            return pickle.load(f)
     
     except Exception as e:
         

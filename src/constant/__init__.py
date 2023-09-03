@@ -46,7 +46,7 @@ MODEL_OBJECT = 'model.pkl'
 # batch prediction 
 
 
-PREDICTION_FOLDER = 'Batch_prediction'
+PREDICTION_FOLDER = 'Batch_Prediction'
 PREDICTION_CSV = 'Prediction_csv'
 PREDICTION_FILE = "output.csv"
 TRANFORM_DATA = 'Processed_transformation'
