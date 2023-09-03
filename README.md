@@ -47,10 +47,6 @@ The cornerstone of our data-driven project was established through a systematic 
 ### Data transformation
 Steps performed in pre-processing are:
 - • First read data from Artifact folder
-- • Checking unnecessary columns
-- • One column has product id which is unique for every product so I deleted that column.
-- • Checked for null values
-- • there are too many null values are present in two columns that’s why I deleted them
 - • Performed one-hot encoder on categorical columns.
 - • Scaling is performed for needed information.
 - • And, the info is prepared for passing to the machine learning formula
@@ -72,6 +68,7 @@ Both CSS and HTML files are being created and are being integrated with the crea
 
 ## Project Link - 
 ```
+https://insurancepriceprediction-kxkgl7wjxrz7cuirl9glfu.streamlit.app/ 
 
 ```
 
